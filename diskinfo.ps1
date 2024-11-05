@@ -22,3 +22,7 @@ foreach ($disk in $disks) {
     Write-Host "  Free Space: ${freeSpace} GB"
     Write-Host "----------------------------------------"
 }
+
+# diskinfo.ps1 by LewdLillyVT
+# https://github.com/LewdLillyVT/PluginLib
+# An example plugin 

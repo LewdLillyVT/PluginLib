@@ -18,3 +18,7 @@ def get_system_info():
 
 if __name__ == "__main__":
     get_system_info()
+
+# sysinfo.py by LewdLillyVT
+# https://github.com/LewdLillyVT/PluginLib
+# An example plugin 
