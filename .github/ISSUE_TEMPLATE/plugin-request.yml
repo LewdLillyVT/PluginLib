@@ -28,7 +28,7 @@ body:
       label: Request Agreement
       description: Have you made sure your plugin request is possible and allowed?
       options:
-        - label: I have read the list of unsupported plugins and will not request a plugin that breaks these rules.
+        - label: I have read the list of disallowed plugins and will not request a plugin that breaks these rules.
           required: true
 
   - type: checkboxes
