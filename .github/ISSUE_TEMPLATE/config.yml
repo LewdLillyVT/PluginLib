@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: goCLI bug reports
+    url: https://github.com/LewdLillyVT/goCLI/issues
+    about: Here to report a bug for goCLI? This is the wrong place, this repo is for developers only. Click the button to get to the official place for goCLI issues
