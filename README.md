@@ -17,7 +17,8 @@ If you would like to request a specific plugin for goCLI:
 1. Open an **Issue** and select the **Plugin Request** template.
 2. Provide as much detail as possible about the desired functionality.
 
-BEFORE REQUESTING A PLUGIN PLEASE READ THE [PLUGIN REQUEST GUIDELINES](https://github.com/LewdLillyVT/PluginLib/wiki/Plugin-requests)
+> [!IMPORTANT]
+> BEFORE REQUESTING A PLUGIN PLEASE READ THE [PLUGIN REQUEST GUIDELINES](https://github.com/LewdLillyVT/PluginLib/wiki/Plugin-requests)
 
 The goCLI community will review your request, and plugin developers may take it up for implementation.
 
