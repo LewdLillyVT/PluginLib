@@ -28,3 +28,7 @@ try {
     Write-Output "Error: Failed to compute hash. $_"
     exit 1
 }
+
+# hash.ps1 by LewdLillyVT
+# https://github.com/LewdLillyVT/PluginLib
+# An example plugin
