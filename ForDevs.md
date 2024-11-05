@@ -1,6 +1,6 @@
 # For Developers - Adding Plugins to goCLI
 
-Welcome to the goCLI plugin development guide! This document explains how to enhance your JavaScript plugins by adding Node.js modules and how to document your plugins with code comments.
+Welcome to the goCLI plugin development guide! This document explains how to enhance your plugins by adding Node.js modules for JavaScript, as well as documenting your plugins with code comments. We also support PowerShell plugins, and while Python plugins are currently limited, we have plans for future enhancements.
 
 ## Adding Node.js Modules
 
@@ -58,11 +58,46 @@ function run(getInputFunction) {
 // An example plugin to test the new node package manager integration feature
 ```
 
-## Documenting Plugin Information
+## PowerShell Plugins
+
+For PowerShell plugins, you just write the powershell code. Here's an example:
+
+```powershell
+# get-diskinfo.ps1
+
+# Get disk information
+$disks = Get-PSDrive -PSProvider FileSystem
+
+# Check if any disks were found
+if ($disks.Count -eq 0) {
+    Write-Host "No disks found."
+    exit 1
+}
+
+# Display disk information
+Write-Host "Drive Information:"
+foreach ($disk in $disks) {
+    $usedSpace = [math]::round($disk.Used / 1GB, 2)
+    $freeSpace = [math]::round($disk.Free / 1GB, 2)
+    $totalSpace = [math]::round($disk.Used / 1GB + $disk.Free / 1GB, 2)
+    
+    Write-Host "Drive: $($disk.Name)"
+    Write-Host "  Total Size: ${totalSpace} GB"
+    Write-Host "  Used Space: ${usedSpace} GB"
+    Write-Host "  Free Space: ${freeSpace} GB"
+    Write-Host "----------------------------------------"
+}
+
+# diskinfo.ps1 by LewdLillyVT
+# https://github.com/LewdLillyVT/PluginLib
+# An example plugin 
+```
+
+### Documenting Plugin Information
 
 To ensure that users of your plugin have the necessary information, please add three lines of code comments at the end of each plugin file. This information will be read by the goCLI application to provide users with details about the plugin.
 
-### Format of the Plugin Information Comments
+#### Format of the Plugin Information Comments
 
 The last three lines should ideally include:
 
@@ -70,14 +105,45 @@ The last three lines should ideally include:
 2. Any specific usage instructions or requirements.
 3. The author's name or a link to the plugin repository.
 
-### Example
+#### Example
 
-At the end of your JavaScript plugin, you might add:
+At the end of your PowerShell plugin, you might add:
 
-```javascript
-// Author: LewdLillyVT
-// This plugin calculates the factorial of a number using user input.
-// Ensure you have the necessary Node.js modules installed.
+```powershell
+# Author: LewdLillyVT
+# This plugin retrieves disk information from the system.
+# Ensure you have the necessary PowerShell modules installed.
+```
+
+## Python Plugins
+
+Currently, Python plugins do not support external libraries, but this functionality is planned for a future release. You can still write your Python code without additional dependencies. Here’s an example:
+
+```python
+# sysinfo.py
+
+import platform
+
+def get_system_info():
+    system_info = {
+        "System": platform.system(),
+        "Node Name": platform.node(),
+        "Release": platform.release(),
+        "Version": platform.version(),
+        "Machine": platform.machine(),
+        "Processor": platform.processor(),
+    }
+
+    print("System Information:")
+    for key, value in system_info.items():
+        print(f"{key}: {value}")
+
+if __name__ == "__main__":
+    get_system_info()
+
+# sysinfo.py by LewdLillyVT
+# https://github.com/LewdLillyVT/PluginLib
+# An example plugin 
 ```
 
 Thank you for contributing to goCLI!
