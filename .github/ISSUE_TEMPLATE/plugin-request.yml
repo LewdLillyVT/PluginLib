@@ -1,0 +1,42 @@
+name: Plugin Request
+description: Suggest a plugin for goCLI that you'd like to see developed!
+title: ''
+labels: plugin request
+assignees: ''
+
+body:
+  - type: textarea
+    id: plugin-description
+    attributes:
+      label: Plugin Description
+      description: In basic terms, describe the plugin idea you have.
+      placeholder: I think a plugin that does ... would be cool! Maybe if it could do ... too?
+    validations:
+      required: true
+
+  - type: textarea
+    id: detailed-plugin-description
+    attributes:
+      label: Go into more detail...
+      description: If you'd like to, give us a bit more information on what you'd like this plugin to do and/or how you want it to work. Not required.
+      placeholder: I think it should also do ..., ... and ... too. I'd like it to use ... instead of ... as I think that would be more user friendly.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: agreement-valid-request
+    attributes:
+      label: Request Agreement
+      description: Have you made sure your plugin request is possible and allowed?
+      options:
+        - label: I have read the list of unsupported plugins and will not request a plugin that breaks these rules.
+          required: true
+
+  - type: checkboxes
+    id: agreement-check
+    attributes:
+      label: ​
+      description: Have you checked to make sure your plugin was not already requested?
+      options:
+        - label: I did indeed check to make sure my plugin request is original!
+          required: true
